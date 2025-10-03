@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>OverlayForge by Kleider</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      background-color: #0f0f0f;
+      color: #00ff99;
+      font-family: 'Orbitron', sans-serif;
+      animation: fadeInScale 1s ease-out;
+    }
+
+    h1, h2, h3 {
+      text-align: center;
+    }
+
+    a {
+      color: #00ff99;
+      text-decoration: none;
+    }
+
+    section {
+      padding: 60px 20px;
+    }
+
+    /* Animación de entrada */
+    @keyframes fadeInScale {
+      0% { opacity: 0; transform: scale(0.95); }
+      100% { opacity: 1; transform: scale(1); }
+    }
+
+    /* Menú hamburguesa */
+    header {
+      background-color: #0f0f0f;
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #hamburger span {
+      display: block;
+      width: 25px;
+      height: 3px;
+      background: #00ff99;
+      margin: 5px 0;
+    }
+
+    #mobileMenu {
+      display: none;
+      background-color: #1a1a1a;
+      padding: 20px;
+      text-align: center;
+    }
+
+    #mobileMenu a {
+      display: block;
+      margin: 10px 0;
+    }
+
+    /* Responsive */
+    @media screen and (max-width:768px) {
+      h1, h2, h3 { font-size: 1.5em; }
+      p, li { font-size: 1em; }
+      nav a { display: block; margin: 10px 0; }
+    }
+
+    /* Roadmap visual */
+    .timeline {
+      position: relative;
+      max-width: 800px;
+      margin: 60px auto;
+    }
+
+    .timeline-item {
+      position: relative;
+      margin-bottom: 60px;
+      opacity: 0;
+      transform: translateY(40px);
+      transition: all 0.8s ease-out;
+    }
+
+    .timeline-item.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .timeline-icon {
+      background-color: #00ff99;
+      color: #0f0f0f;
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      font-size: 1.5em;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 20px;
+      box-shadow: 0 0 15px #00ff99;
+    }
+
+    .timeline-content {
+      text-align: center;
+    }
+
+    footer {
+      background-color: #0a0a0a;
+      border-top: 2px solid #00ff99;
+      padding: 40px 20px;
+      text-align: center;
+      font-size: 0.9em;
+    }
+
+    footer nav a {
+      margin: 0 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Menú hamburguesa -->
+  <header>
+    <h1>OverlayForge</h1>
+    <div id="hamburger" onclick="toggleMenu()">
+      <span></span><span></span><span></span>
+    </div>
+  </header>
+
+  <nav id="mobileMenu">
+    <a href="#inicio">Inicio</a>
+    <a href="#funciones">Funciones</a>
+    <a href="#precios">Precios</a>
+    <a href="#demo">Demo</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <!-- Inicio -->
+  <section id="inicio">
+    <h2>OverlayForge by Kleider</h2>
+    <p>Tu identidad gamer, personalizada al máximo</p>
+    <a href="#demo" style="display:inline-block; background:#00ff99; color:#0f0f0f; padding:10px 20px; border-radius:8px;">🎮 Comenzar ahora</a>
+  </section>
+
+  <!-- Funciones -->
+  <section id="funciones">
+    <h2>🧩 Funciones principales</h2>
+    <ul>
+      <li>🎨 Editor visual con arrastrar y soltar</li>
+      <li>🧑🏽‍🎨 Generador de avatar desde tu foto</li>
+      <li>📱 Panel de redes sociales integrado</li>
+      <li>🚨 Alertas animadas con sonido</li>
+      <li>🖥️ Pantallas preconfiguradas</li>
+      <li>📤 Exportación en PNG/WebM</li>
+      <li>🤖 Asistente AI integrado</li>
+      <li>🔗 Compatible con OBS, Streamlabs, Kick Studio</li>
+    </ul>
+  </section>
+
+  <!-- Precios -->
+  <section id="precios">
+    <h2>💼 Planes y precios</h2>
+    <div>
+      <h3>🟢 Gratuito – $0</h3>
+      <p>Editor básico, 1 avatar, exportación PNG</p>
+      <h3>⚡ Premium – $9.99/mes</h3>
+      <p>Avatares ilimitados, alertas animadas, WebM</p>
+      <h3>🔥 Pro Creator – $29.99/mes</h3>
+      <p>Licencia comercial, branding completo</p>
+    </div>
+  </section>
+
+  <!-- Galería -->
+  <section id="galeria">
+    <h2>🖼️ Galería</h2>
+    <p>[Imagen: Starting Soon]</p>
+    <p>[Imagen: Avatar Editor]</p>
+    <p>[Imagen: Alerta Animada]</p>
+  </section>
+
+  <!-- Demo -->
+  <section id="demo">
+    <h2>🕹️ Demo interactiva</h2>
+    <p>🎨 Probar editor</p>
+    <p>🧑🏽‍🎨 Crear avatar</p>
+    <p>🚨 Editar alertas</p>
+  </section>
+
+  <!-- Roadmap -->
+  <section id="roadmap-visual">
+    <h2>📍 Roadmap de OverlayForge</h2>
+    <div class="timeline">
+      <div class="timeline-item fade-in">
+        <div class="timeline-icon">✅</div>
+        <div class="timeline-content">
+          <h3>Fase 1 – MVP funcional</h3>
+          <p>Editor visual, exportación básica</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-icon">🔄</div>
+        <div class="timeline-content">
+          <h3>Fase 2 – Integración</h3>
+          <p>Conexión con OBS, Streamlabs</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-icon">🛍️</div>
+        <div class="timeline-content">
+          <h3>Fase 3 – Comunidad</h3>
+          <p>Tienda de plantillas, perfiles</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-icon">🌐</div>
+        <div class="timeline-content">
+          <h3>Fase 4 – Lanzamiento global</h3>
+          <p>Versión web y móvil</p>
+        </div>
+      </div>
+      <div class="timeline-item fade-in">
+        <div class="timeline-icon">🚀</div>
+        <div class="timeline-content">
+          <h3>Fase 5 – Expansión</h3>
+          <p>Overlays dinámicos, IA visual</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contacto -->
+  <section id="contacto">
+    <h2>📞 Contacto</h2>
+    <p>Correo: <strong>kleiderdelacruz106@gmail.com</strong></p>
+    <form action="mailto:kleiderdelacruz106@gmail.com" method="post" enctype="text/plain">
+      <input type="text" name="nombre" placeholder="Tu nombre" required><br><br>
+      <input type="email" name="correo" placeholder="
